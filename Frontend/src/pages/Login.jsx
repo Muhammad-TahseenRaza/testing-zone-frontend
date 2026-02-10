@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { assets } from "../assets/assets.js";
 import Input from "../components/Input.jsx";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
 
     const [roleError, setRoleError] = useState("");
+    const navigate = useNavigate();
 
     const [registerData, setRegisterData] = useState({
-        name: "",
         email: "",
         password: "",
         role: ''
@@ -40,6 +41,8 @@ function Login() {
 
         setRoleError(""); // clear error
         console.log(registerData);
+
+        navigate('/');
     }
 
     return (
